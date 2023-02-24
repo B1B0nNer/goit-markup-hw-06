@@ -356,10 +356,38 @@
     <div class="backdrop is-hidden" data-modal>
         <div class="modal-window md-hidden" modal-window>
                 <button class="close-btn" data-modal-close>
-                <svg class="close-bg">
-                    <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
-                </svg>
-            </button>
+                    <svg class="close-bg">
+                        <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
+                    </svg>
+                </button>
+                <div class="leave-contacts-window">
+                    <h3>Leave your contacts and we will call you back</h3>
+                    <form class="leave-contacts-form">
+                        <label class="name-in-contacts">
+                            Name
+                            <input type="text" class="name-input-in-contacts" required>
+                        </label>
+                        <label class="phone-in-contacts">
+                            Phone
+                            <input type="tel" class="phone-input-in-contacts" required>
+                        </label>
+                        <label class="email-in-contacts">
+                            Email
+                            <input type="email" required>
+                        </label>
+                        <label class="comment-in-contacts">
+                            Comment
+                            <textarea cols="6" class="comment-input-in-contacts" placeholder="Text input"></textarea>
+                        </label>
+                        <label class="privacy-policy-in-contacts">
+                            <input type="checkbox" class="privacy-policy-checkbox" required>
+                            I accept the terms and conditions of the <a>Privacy Policy</a>
+                        </label>
+                        <button type="submit" class="contacts-submit-btn">
+                            Send
+                        </button>
+                    </form>
+                </div>
         </div>
     </div>
     <script src="./js/modal.js"></script>
