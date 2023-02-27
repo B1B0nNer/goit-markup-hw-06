@@ -9,6 +9,7 @@
     --light-slate: #8E8F99;
     --light-gray: #AFB1B8;
     --green: #31D0AA;
+    --darkgray: #757575;
 }
 
 body{
@@ -273,6 +274,7 @@ ul{
 }
 
 .modal-window{
+    padding: 72px 24px 24px;
     width: 408px;
     min-height: 576px;
     border-radius: 4px;
@@ -283,11 +285,11 @@ ul{
 }
 
 .close-btn{
-    float: right;
+    position: absolute;
+    top: 12px;
+    right: 12px;
     width: 24px;
     height: 24px;
-    margin-top: 12px;
-    margin-right: 12px;
     padding: 0;
     background-color: var(--cornflower);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -319,16 +321,21 @@ ul{
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.leave-contacts-window{
-    margin-top: 72px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.modal-window p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--navyblue);
 }
 
 .leave-contacts-form{
-    margin: 16px 24px 0 24px;
+    margin-top: 24px;
 }
 
 .leave-contacts-form{
@@ -340,7 +347,7 @@ ul{
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 117%;
+    line-height: 1.17;
 
     letter-spacing: 0.04em;
 
@@ -349,9 +356,10 @@ ul{
     margin-bottom: 4px;
 }
 
-.leave-contacts-form label input{
+.input-contact{
     max-width: 360px;
-    max-height: 58px;
+    height: 40px;
+    outline: none;
 }
 
 .leave-contacts-form label:not(.privacy-policy-in-contacts){
@@ -364,17 +372,83 @@ ul{
     margin-bottom: 8px;
 }
 
+.input-contact{
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    width: 360px;
+    padding-left: 32px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.comment-input-in-contacts{
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.input-in-contacts{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-in-contacts{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 20px;
+    top: 11px;
+    transform: translate(-50%);
+    fill: var(--navyblue);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-contact:focus, .input-contact:hover{
+    border-color: var(--iris);
+}
+
+.input-contact:hover + .icon-in-contacts{
+    fill: var(iris);
+}
+
 .privacy-policy-in-contacts{
-    display: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     margin-top: 16px;
     margin-bottom: 24px;
 }
 
+.privacy-policy-in-contacts span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    color: var(--darkslate);
+
+    letter-spacing: 0.04em;
+}
+
+.privacy-policy-in-contacts a{
+    color: var(--iris);
+    text-decoration: underline;
+}
+
 .comment-input-in-contacts{
     padding: 0.375rem 0.75rem;
     max-width: 360px;
-    resize: vertical;
+    outline: none;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comment-input-in-contacts:focus, .comment-input-in-contacts:hover{
+    border-color: var(--iris);
 }
 
 .comment-input-in-contacts::placeholder{
@@ -382,7 +456,7 @@ ul{
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 117%;
+    line-height: 1.17;
 
     letter-spacing: 0.04em;
 
@@ -394,12 +468,12 @@ ul{
     border-radius: 2px;
     background-color: var(--cloud);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 8px;
 }
 
 .privacy-policy-checkbox:checked{
     background-color: var(--ocean);
     border-color: var(--ocean);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-submit-btn{
@@ -407,7 +481,7 @@ ul{
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.04em;
 
     color: #FFFFFF;
@@ -417,7 +491,14 @@ ul{
     border: transparent;
     border-radius: 4px;
 
-    padding: 16px 32px;
+    width: 169px;
+    height: 56px;
+    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts-submit-btn:focus, .contacts-submit-btn:hover{
+    background-color: var(--ocean);
 }
 
 .about_us{
@@ -613,7 +694,7 @@ ul{
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
-    line-height: 111%;
+    line-height: 1.11;
     letter-spacing: 0.02em;
     color: var(--navyblue);
     margin-bottom: 72px;
@@ -712,7 +793,7 @@ p.end_text{
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--white);
     margin-bottom: 16px;
@@ -752,16 +833,23 @@ p.end_text{
     fill: var(--cloud);
 }
 
-.email-sub{
-    margin-left: 80px;
+.email-stuff{
+    margin-left: auto;
 }
 
-.email-sub{
+.sub-stuff{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.email-stuff p{
+    max-height: 24px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     color: #FFFFFF;
 }
@@ -771,10 +859,10 @@ p.end_text{
 }
 
 .email-for-sub{
+    outline: none;
     display: block;
-    margin-top: 16px;
-    max-width: 264px;
-    max-height: 40px;
+    width: 264px;
+    height: 40px;
     padding: 0.375rem 0.75rem;
     font-family: inherit;
     font-size: 1rem;
@@ -793,7 +881,7 @@ p.end_text{
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 200%;
+    line-height: 2;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.6);
     margin-left: 16px;
@@ -801,7 +889,8 @@ p.end_text{
     margin-bottom: 8px;
 }
 
-.email-for-sub:focus{
+.email-for-sub:focus, .email-for-sub:hover{
+    border-color: var(--iris);
     box-sizing: border-box;
 }
 
@@ -812,7 +901,6 @@ p.end_text{
     background-color: var(--iris);
     border: none;
     padding: 8px 24px;
-    max-height: 40px;
     border-radius: 4px;
     margin-left: 24px;
 
@@ -820,22 +908,21 @@ p.end_text{
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     color: #fff;
 
-    margin-top: 37px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sub-button:focus, .sub-button:hover{
+    background-color: var(--ocean);
 }
 
 .sub-icon{
     width: 24px;
     height: 24px;
     margin-left: 16px;
-}
-
-.email-stuff{
-    display: flex;
-    flex-direction: row;
 }
 
 .products-section{
@@ -939,7 +1026,7 @@ p.end_text{
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--cloud);
     opacity: 1;
