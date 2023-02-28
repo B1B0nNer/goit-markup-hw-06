@@ -375,7 +375,7 @@
                         <span class="text-in-contacts">Phone</span>
                         <span class="input-in-contacts">
                             <input type="tel" class="phone-input-in-contacts input-contact" required>
-                            <svg class="icon-in-contacts">
+                            <svg class="icon-in-contacts ico-cont">
                                 <use href="./images/icons.svg#icon-phone-black-18dp-1"></use>
                             </svg>
                         <span>
@@ -384,7 +384,7 @@
                         <span class="text-in-contacts">Email</span>
                         <span class="input-in-contacts">
                             <input type="email" class="input-contact" required>
-                            <svg class="icon-in-contacts">
+                            <svg class="icon-in-contacts ico-cont">
                                 <use href="./images/icons.svg#icon-email-black-18dp-1"></use>
                             </svg>
                         </span>
@@ -394,8 +394,12 @@
                         <textarea class="comment-input-in-contacts" placeholder="Text input"></textarea>
                     </label>
                     <label class="privacy-policy-in-contacts">
-                        <input type="checkbox" class="privacy-policy-checkbox" required>
-                        <span>I accept the terms and conditions of the <a>Privacy Policy</a></span>
+                        <div class="checkbox-wrapper">
+                            <span class="icon-background" for="modern-checkbox"></span>
+                            <input type="checkbox" id="modern-checkbox" required>
+                            <span class="icon-privacy-house"><svg class="icon-privacy"><use href="./images/icons.svg#icon-Vector"></use></svg></span>
+                          </div>
+                        <span class="text-privacy">I accept the terms and conditions of the <a>Privacy Policy</a></span>
                     </label>
                     <button type="submit" class="contacts-submit-btn">
                         Send
