@@ -342,7 +342,7 @@
             <form class="email-stuff">
                 <p>Subscribe</p>
                 <div class="sub-stuff">
-                    <input type="email" class="email-for-sub" placeholder="E-mail" required>
+                    <input type="email" class="email-for-sub" name="email-for-sub" placeholder="E-mail" required>
                     <button class="sub-button" type="button submit">
                         Subscribe
                         <svg class="sub-icon">
@@ -365,7 +365,7 @@
                     <label class="name-in-contacts">
                         <span class="text-in-contacts">Name</span>
                         <span class="input-in-contacts">
-                            <input type="text" class="name-input-in-contacts input-contact" required>
+                            <input type="text" class="name-input-in-contacts input-contact" name="input-contact" required>
                             <svg class="icon-in-contacts">
                                 <use href="./images/icons.svg#icon-person-black-18dp-1"></use>
                             </svg>
@@ -374,7 +374,7 @@
                     <label class="phone-in-contacts">
                         <span class="text-in-contacts">Phone</span>
                         <span class="input-in-contacts">
-                            <input type="tel" class="phone-input-in-contacts input-contact" required>
+                            <input type="tel" name="input-contact" class="phone-input-in-contacts input-contact" required>
                             <svg class="icon-in-contacts ico-cont">
                                 <use href="./images/icons.svg#icon-phone-black-18dp-1"></use>
                             </svg>
@@ -383,7 +383,7 @@
                     <label class="email-in-contacts">
                         <span class="text-in-contacts">Email</span>
                         <span class="input-in-contacts">
-                            <input type="email" class="input-contact" required>
+                            <input type="email" name="input-contact" class="input-contact" required>
                             <svg class="icon-in-contacts ico-cont">
                                 <use href="./images/icons.svg#icon-email-black-18dp-1"></use>
                             </svg>
@@ -394,11 +394,8 @@
                         <textarea class="comment-input-in-contacts" placeholder="Text input"></textarea>
                     </label>
                     <label class="privacy-policy-in-contacts">
-                        <div class="checkbox-wrapper">
-                            <span class="icon-background" for="modern-checkbox"></span>
-                            <input type="checkbox" id="modern-checkbox" required>
-                            <span class="icon-privacy-house"><svg class="icon-privacy"><use href="./images/icons.svg#icon-Vector"></use></svg></span>
-                          </div>
+                        <input type="checkbox" name="moder-checbox" class="modern-checkbox visually-hidden" required>
+                        <span class="icon-privacy-house"><svg class="icon-privacy"><use href="./images/icons.svg#icon-Vector"></use></svg></span>
                         <span class="text-privacy">I accept the terms and conditions of the <a>Privacy Policy</a></span>
                     </label>
                     <button type="submit" class="contacts-submit-btn">
